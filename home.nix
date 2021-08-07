@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 
+let neovim_config = (builtins.fetchurl "https://github.com/VergeDX/config-nixpkgs/raw/master/config/neovim.nix");
+in
 {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -25,6 +27,7 @@
     ./fish.nix
     ./cli.nix
     ./gui.nix
+    neovim_config
   ];
 
   home.sessionVariables = {
