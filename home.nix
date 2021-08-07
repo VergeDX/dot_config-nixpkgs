@@ -24,6 +24,7 @@
     ./git.nix
     ./fish.nix
     ./cli.nix
+    ./gui.nix
   ];
 
   home.sessionVariables = {
