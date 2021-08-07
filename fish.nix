@@ -11,6 +11,14 @@
   programs.fish.shellInit = "replay . /Users/vanilla/.nix-profile/etc/profile.d/nix.sh";
   programs.fish.plugins = [
     {
+      name = "pisces";
+      src = pkgs.fetchgit {
+        url = "https://github.com/laughedelic/pisces";
+        rev = "v0.7.0";
+        sha256 = "sha256-Oou2IeNNAqR00ZT3bss/DbhrJjGeMsn9dBBYhgdafBw=";
+      };
+    }
+    {
       name = "replay.fish";
       src = pkgs.fetchgit {
         url = "https://github.com/jorgebucaran/replay.fish";
