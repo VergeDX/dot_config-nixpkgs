@@ -11,4 +11,8 @@
     user = "git";
     proxyCommand = "nc -X connect -x localhost:7890 %h %p";
   };
+
+  programs.gpg.enable = true;
+  programs.git.signing.key = "4DFA2BDD7305E739";
+  programs.git.signing.signByDefault = true;
 }
