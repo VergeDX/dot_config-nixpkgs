@@ -4,6 +4,15 @@
   programs.git.userName = "Vanilla";
   programs.git.userEmail = "neko@hydev.org";
 
+  programs.git.includes = [
+    {
+      path = (pkgs.fetchurl {
+        url = "https://github.com/GitAlias/gitalias/raw/main/gitalias.txt";
+        sha256 = "01h369l2am2bgwlgjasvllxfjwjx0f90l01z1dx4ns4r3slcds9d";
+      }).outPath;
+    }
+  ];
+
   home.packages = [ pkgs.netcat ];
   programs.ssh.enable = true;
   programs.ssh.matchBlocks."git@github.com" = {
