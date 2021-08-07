@@ -23,5 +23,6 @@
   imports = [
     ./git.nix
     ./fish.nix
+    ./cli.nix
   ];
 }
