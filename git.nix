@@ -13,12 +13,11 @@
     }
   ];
 
-  home.packages = [ pkgs.netcat ];
   programs.ssh.enable = true;
   programs.ssh.matchBlocks."git@github.com" = {
     host = "github.com";
     user = "git";
-    proxyCommand = "nc -X connect -x localhost:7890 %h %p";
+    proxyCommand = "nc -x 127.0.0.1:7890 %h %p";
   };
 
   programs.gpg.enable = true;
