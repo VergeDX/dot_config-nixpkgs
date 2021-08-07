@@ -7,8 +7,9 @@
     line_break = { disabled = true; };
   };
 
-  # https://nixos.org/download.html
-  programs.fish.shellInit = "replay . /Users/vanilla/.nix-profile/etc/profile.d/nix.sh";
+  # https://github.com/LnL7/nix-darwin
+  programs.fish.shellInit = "replay source /etc/static/bashrc";
+
   programs.fish.plugins = [
     {
       name = "pisces";
