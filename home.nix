@@ -44,6 +44,7 @@ in
     ./develop.nix
 
     neovim_config
+    ./neovim.nix
     shells_config
     vscode_config
   ];
