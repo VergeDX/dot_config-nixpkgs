@@ -37,6 +37,7 @@ in
     ./fish.nix
     ./cli.nix
     ./gui.nix
+    ./develop.nix
 
     neovim_config
     vscode_config

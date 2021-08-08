@@ -4,7 +4,6 @@
     pkgs.wget
     pkgs.tree
 
-    pkgs.nodejs
     pkgs.nodePackages.pxder
 
     pkgs.nano
