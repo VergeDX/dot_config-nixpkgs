@@ -13,6 +13,10 @@
     }
   ];
 
+  programs.git.extraConfig = {
+    init.defaultBranch = "master";
+  };
+
   programs.ssh.enable = true;
   programs.ssh.matchBlocks."git@github.com" = {
     host = "github.com";
