@@ -15,6 +15,7 @@
 
   programs.git.extraConfig = {
     init.defaultBranch = "master";
+    core.editor = "nvim";
   };
 
   programs.ssh.enable = true;
