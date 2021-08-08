@@ -9,6 +9,10 @@
 
     pkgs.nano
     pkgs.nanorc
+
+    pkgs.screenfetch
+    pkgs.neofetch
+    pkgs.lolcat
   ];
 
   # https://gist.github.com/JeffreyCA/321f9e704e5561d60f90d9f3a923a0ac
