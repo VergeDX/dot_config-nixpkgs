@@ -1,9 +1,15 @@
 { config, pkgs, ... }:
 
-let neovim_config = (builtins.fetchurl {
-  url = "https://github.com/VergeDX/config-nixpkgs/raw/master/config/neovim.nix";
-  sha256 = "1s221kz43cgd35x3qhl5gay4cis746s20q7ncjdnlq71vbbz478l";
-});
+let
+  vergedx_config_baseurl = "https://github.com/VergeDX/config-nixpkgs/raw/master/";
+  neovim_config = (builtins.fetchurl {
+    url = "${vergedx_config_baseurl}/config/neovim.nix";
+    sha256 = "1s221kz43cgd35x3qhl5gay4cis746s20q7ncjdnlq71vbbz478l";
+  });
+  vscode_config = (builtins.fetchurl {
+    url = "${vergedx_config_baseurl}/config/vscode.nix";
+    sha256 = "1wg4sy1bsx9i9mjn71lhls2a9pscklk1kf8zz4db6m8iyb03xy6l";
+  });
 in
 {
   # Let Home Manager install and manage itself.
@@ -25,12 +31,15 @@ in
   home.stateVersion = "20.09";
 
   home.packages = [ pkgs.nixpkgs-fmt ];
+  nixpkgs.config.allowUnfree = true;
   imports = [
     ./git.nix
     ./fish.nix
     ./cli.nix
     ./gui.nix
+
     neovim_config
+    vscode_config
   ];
 
   home.sessionVariables = {
