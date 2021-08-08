@@ -1,4 +1,9 @@
 { programs, pkgs, ... }:
+let
+  thefuck_nocheck = pkgs.thefuck.overrideAttrs (
+    oldAttrs: rec { pytestCheckPhase = "echo"; }
+  );
+in
 {
   programs.fish.enable = true;
   programs.starship.enable = true;
@@ -7,8 +12,12 @@
     line_break = { disabled = true; };
   };
 
+  home.packages = [ thefuck_nocheck ];
   # https://github.com/LnL7/nix-darwin
-  programs.fish.shellInit = "replay source /etc/static/bashrc";
+  programs.fish.shellInit = ''
+    replay source /etc/static/bashrc
+    thefuck --alias | source
+  '';
 
   programs.fish.plugins = [
     {
