@@ -12,6 +12,14 @@
 
   programs.fish.plugins = [
     {
+      name = "done";
+      src = pkgs.fetchgit {
+        url = "https://github.com/franciscolourenco/done";
+        rev = "1.16.3";
+        sha256 = "sha256-Xld66z9vVp3kxikndZ9k/zlNvP0YSoSCNTBkJ8rT3uo=";
+      };
+    }
+    {
       name = "pisces";
       src = pkgs.fetchgit {
         url = "https://github.com/laughedelic/pisces";
