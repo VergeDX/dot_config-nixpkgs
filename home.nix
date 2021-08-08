@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
-let neovim_config = (builtins.fetchurl "https://github.com/VergeDX/config-nixpkgs/raw/master/config/neovim.nix");
+let neovim_config = (builtins.fetchurl {
+  url = "https://github.com/VergeDX/config-nixpkgs/raw/master/config/neovim.nix";
+  sha256 = "1s221kz43cgd35x3qhl5gay4cis746s20q7ncjdnlq71vbbz478l";
+});
 in
 {
   # Let Home Manager install and manage itself.
@@ -19,7 +22,7 @@ in
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "21.11";
+  home.stateVersion = "20.09";
 
   home.packages = [ pkgs.nixpkgs-fmt ];
   imports = [
