@@ -4,4 +4,6 @@
     pkgs.nodejs
     pkgs.yarn
   ];
+
+  home.sessionPath = [ "/Users/vanilla/Android/platform-tools" ];
 }
