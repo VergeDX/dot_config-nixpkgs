@@ -1,13 +1,17 @@
 { config, pkgs, ... }:
 
 let
-  vergedx_config_baseurl = "https://github.com/VergeDX/config-nixpkgs/raw/master/";
+  vergedx_config_baseurl = "https://github.com/VergeDX/config-nixpkgs/raw/master/config";
   neovim_config = (builtins.fetchurl {
-    url = "${vergedx_config_baseurl}/config/neovim.nix";
+    url = "${vergedx_config_baseurl}/neovim.nix";
     sha256 = "1s221kz43cgd35x3qhl5gay4cis746s20q7ncjdnlq71vbbz478l";
   });
+  shells_config = (builtins.fetchurl {
+    url = "${vergedx_config_baseurl}/shells.nix";
+    sha256 = "1yy2s4nzjnpd54f3dw4g7flh6nqc534gcn79jfc8zd172p9jfl3v";
+  });
   vscode_config = (builtins.fetchurl {
-    url = "${vergedx_config_baseurl}/config/vscode.nix";
+    url = "${vergedx_config_baseurl}/vscode.nix";
     sha256 = "03imb5n4yb0k3y0shawl4132rwry3rpdnhjjr6v8n0rwqmwi47dw";
   });
 in
@@ -40,6 +44,7 @@ in
     ./develop.nix
 
     neovim_config
+    shells_config
     vscode_config
   ];
 
