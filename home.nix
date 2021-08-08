@@ -36,5 +36,6 @@ in
     all_proxy = "socks5://127.0.0.1:7890";
 
     NIXPKGS_ALLOW_UNFREE = 1;
+    EDITOR = "nvim";
   };
 }
