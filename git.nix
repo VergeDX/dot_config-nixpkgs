@@ -26,10 +26,6 @@
   };
 
   programs.gpg.enable = true;
-  programs.gpg.package = pkgs.gnupg.override {
-    pinentry = pkgs.pinentry-curses;
-  };
-
   programs.git.signing.key = "4DFA2BDD7305E739";
   programs.git.signing.signByDefault = true;
 
