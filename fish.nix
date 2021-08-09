@@ -25,6 +25,18 @@ in
         for pid in (pgrep vim)
           kill -SIGUSR1 $pid
         end
+
+        set -l val (defaults read -g AppleInterfaceStyle) >/dev/null
+        if test $status -eq 0
+          set mode "Dark"
+        else
+          set mode "Light"
+        end
+
+        # https://fishshell.com/docs/current/cmds/for.html
+        for socket in (ls /tmp/ | grep '^mykitty');
+          kitty @ --to=unix:/tmp/"$socket" set-colors -a "~/.config/kitty/Solarized_$mode.conf";
+        end
       '';
     };
   };
