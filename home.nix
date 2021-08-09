@@ -47,6 +47,7 @@ in
     ./neovim.nix
     shells_config
     vscode_config
+    ./dark-mode-notify.nix
   ];
 
   home.sessionVariables = {
