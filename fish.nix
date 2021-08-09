@@ -16,4 +16,16 @@ in
     # set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/completions
     # set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
   '';
+
+  # https://arslan.io/2021/02/15/automatic-dark-mode-for-terminal-applications/
+  # https://fishshell.com/docs/current/cmds/if.html
+  programs.fish.functions = {
+    match_theme = {
+      body = ''
+        for pid in (pgrep vim)
+          kill -SIGUSR1 $pid
+        end
+      '';
+    };
+  };
 }
