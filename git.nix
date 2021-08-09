@@ -28,4 +28,11 @@
   programs.gpg.enable = true;
   programs.git.signing.key = "4DFA2BDD7305E739";
   programs.git.signing.signByDefault = true;
+
+  programs.git.extraConfig = {
+    pack = {
+      windowMemory = "2g";
+      packSizeLimit = "1g";
+    };
+  };
 }
