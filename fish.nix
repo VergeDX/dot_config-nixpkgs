@@ -4,7 +4,7 @@ let
     oldAttrs: rec { pytestCheckPhase = "echo"; }
   );
   kitty_auto_match_theme_command = ''
-    set -l val (defaults read -g AppleInterfaceStyle) >/dev/null
+    set -l val (defaults read -g AppleInterfaceStyle 2> /dev/null)
     if test $status -eq 0
       set mode "Dark"
     else
