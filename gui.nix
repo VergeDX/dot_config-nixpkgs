@@ -5,7 +5,7 @@ in
   home.packages = [ pkgs.gimp ];
 
   programs.kitty.enable = true;
-  programs.kitty.font.package = pkgs.nerdfonts;
+  # programs.kitty.font.package = pkgs.nerdfonts;
   programs.kitty.font.name = "Hack Nerd Font Mono";
 
   home.file.".config/kitty/Solarized_Light.conf".source = pkgs.fetchurl {
