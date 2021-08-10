@@ -16,4 +16,8 @@
     ELECTRON_GET_USE_PROXY = true;
     GLOBAL_AGENT_HTTPS_PROXY = "http://127.0.0.1:7890";
   };
+
+  home.file."Library/Application Support/code-oss-dev/User/settings.json".text = builtins.toJSON {
+    "window.autoDetectColorScheme" = true;
+  };
 }
