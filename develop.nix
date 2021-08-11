@@ -6,6 +6,11 @@
 
     pkgs.nodePackages.yo
     pkgs.nodePackages.generator-code
+
+    pkgs.cmake
+    pkgs.gnumake
+    pkgs.clang
+    pkgs.lldb
   ];
 
   home.file."Documents/node_modules".source = "${pkgs.nodePackages.generator-code}/lib/node_modules";
