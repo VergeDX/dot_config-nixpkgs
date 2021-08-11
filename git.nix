@@ -1,8 +1,10 @@
-{ programs, pkgs, ... }:
+{ programs, pkgs, home, ... }:
 {
   programs.git.enable = true;
   programs.git.userName = "Vanilla";
   programs.git.userEmail = "neko@hydev.org";
+
+  home.packages = [ pkgs.gh ];
 
   programs.git.includes = [
     {
