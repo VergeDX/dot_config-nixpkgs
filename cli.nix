@@ -3,8 +3,12 @@
   home.packages = [
     pkgs.wget
     pkgs.tree
+    pkgs.watch
+    pkgs.p7zip
+    pkgs.dmg2img
 
     pkgs.nodePackages.pxder
+    pkgs.nodePackages.clipboard-cli
 
     pkgs.nano
     pkgs.nanorc

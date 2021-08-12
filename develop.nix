@@ -11,6 +11,9 @@
     pkgs.gnumake
     pkgs.clang
     pkgs.lldb
+
+    pkgs.openocd
+    pkgs.stm32cubemx
   ];
 
   home.file."Documents/node_modules".source = "${pkgs.nodePackages.generator-code}/lib/node_modules";
