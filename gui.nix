@@ -27,5 +27,10 @@ in
     # https://sw.kovidgoyal.net/kitty/remote-control/?highlight=#cmdoption-kitty-to
     allow_remote_control = "yes";
     listen_on = "unix:/tmp/mykitty";
+
+    # https://sw.kovidgoyal.net/kitty/conf/#window-layout
+    remember_window_size = "no";
+    initial_window_width = 640;
+    initial_window_height = 400;
   };
 }
