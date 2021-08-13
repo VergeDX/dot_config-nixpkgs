@@ -4,7 +4,7 @@
   programs.git.userName = "Vanilla";
   programs.git.userEmail = "neko@hydev.org";
 
-  home.packages = [ pkgs.gh ];
+  home.packages = with pkgs; [ gh pinentry-curses ];
 
   programs.git.includes = [
     {
@@ -28,6 +28,10 @@
   };
 
   programs.gpg.enable = true;
+  home.file.".gnupg/gpg-agent.conf".text =
+    "pinentry-program ${pkgs.pinentry-curses}/bin/pinentry";
+  programs.fish.shellInit = "export GPG_TTY=(tty)";
+
   programs.git.signing.key = "4DFA2BDD7305E739";
   programs.git.signing.signByDefault = true;
 
