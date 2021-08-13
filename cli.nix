@@ -6,9 +6,11 @@
     pkgs.watch
     pkgs.p7zip
     pkgs.dmg2img
+    pkgs.tmux
 
     pkgs.nodePackages.pxder
     pkgs.nodePackages.clipboard-cli
+    pkgs.yarn2nix
 
     pkgs.nano
     pkgs.nanorc
