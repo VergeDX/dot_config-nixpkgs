@@ -29,7 +29,4 @@
 
   programs.autojump.enable = true;
   programs.autojump.enableFishIntegration = true;
-
-  programs.nix-index.enable = true;
-  programs.nix-index.enableFishIntegration = true;
 }
