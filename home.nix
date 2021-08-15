@@ -38,14 +38,14 @@ in
   nixpkgs.config.allowUnfree = true;
   imports = [
     ./git.nix
-    ./fish.nix
     ./cli.nix
     ./gui.nix
     ./develop.nix
 
     neovim_config
-    ./neovim.nix
+    ./extra/neovim.nix
     shells_config
+    ./extra/fish.nix
     vscode_config
     ./dark-mode-notify.nix
   ];
