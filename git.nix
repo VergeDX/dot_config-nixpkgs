@@ -8,10 +8,12 @@
 
   programs.git.includes = [
     {
-      path = (pkgs.fetchurl {
-        url = "https://github.com/GitAlias/gitalias/raw/main/gitalias.txt";
-        sha256 = "01h369l2am2bgwlgjasvllxfjwjx0f90l01z1dx4ns4r3slcds9d";
-      }).outPath;
+      path = # Version: 24.0.0
+        let rev = "d62654999ec27d7b7689a1938927045e99be4088"; in
+        (pkgs.fetchurl {
+          url = "https://raw.githubusercontent.com/GitAlias/gitalias/${rev}/gitalias.txt";
+          sha256 = "sha256-LenGqB6ZaEt6Cz8ACpIDXXLpOqVbK/kof0tUJWgyAwY=";
+        }).outPath;
     }
   ];
 
