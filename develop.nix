@@ -16,7 +16,8 @@
     pkgs.stm32cubemx
   ];
 
-  home.file."Documents/node_modules".source = "${pkgs.nodePackages.generator-code}/lib/node_modules";
+  # home.file."Documents/node_modules".source =
+  #   "${pkgs.nodePackages.generator-code}/lib/node_modules";
 
   # https://formulae.brew.sh/formula/openjdk@8
   home.sessionPath = [ "/Users/vanilla/Android/platform-tools" ];
