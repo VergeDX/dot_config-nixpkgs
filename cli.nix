@@ -35,17 +35,17 @@ in
   home.file.".nanorc".text = "include ${pkgs.nanorc}/share/*.nanorc";
   home.file.".mrconfig".text = builtins.concatStringsSep "\n" [
     (mrConfig "Documents/dot_config-nixpkgs"
-      "git@github.com:VergeDX/dot_config-nixpkgs.git"
-      "dot_config-nixpkgs")
+      "git@github.com:VergeDX/dot_config-nixpkgs.git" "dot_config-nixpkgs")
     (mrConfig "Documents/dot_nixpkgs"
-      "git@github.com:VergeDX/dot_nixpkgs.git"
-      "dot_nixpkgs")
+      "git@github.com:VergeDX/dot_nixpkgs.git" "dot_nixpkgs")
     (mrConfig "Documents/dark-mode-notify"
-      "git@github.com:bouk/dark-mode-notify.git"
-      "dark-mode-notify")
+      "git@github.com:bouk/dark-mode-notify.git" "dark-mode-notify")
     (mrConfig "Documents/nixpkgs"
-      "git@github.com:NixOS/nixpkgs.git"
-      "nixpkgs")
+      "git@github.com:NixOS/nixpkgs.git" "nixpkgs")
+    (mrConfig "Documents/iterm2"
+      "https://gitlab.com/gnachman/iterm2.git" "iterm2")
+    (mrConfig "Documents/BetterDiscord"
+      "git@github.com:BetterDiscord/BetterDiscord.git" "BetterDiscord")
   ];
 
   programs.autojump.enable = true;
