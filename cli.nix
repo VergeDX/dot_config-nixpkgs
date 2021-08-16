@@ -17,6 +17,7 @@ in
     pkgs.nodePackages.pxder
     pkgs.nodePackages.clipboard-cli
     pkgs.yarn2nix
+    pkgs.nodePackages.node2nix
 
     pkgs.nano
     pkgs.nanorc
@@ -42,8 +43,6 @@ in
       "git@github.com:bouk/dark-mode-notify.git" "dark-mode-notify")
     (mrConfig "Documents/nixpkgs"
       "git@github.com:NixOS/nixpkgs.git" "nixpkgs")
-    (mrConfig "Documents/iterm2"
-      "https://gitlab.com/gnachman/iterm2.git" "iterm2")
     (mrConfig "Documents/BetterDiscord"
       "git@github.com:BetterDiscord/BetterDiscord.git" "BetterDiscord")
   ];
