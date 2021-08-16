@@ -43,6 +43,9 @@ in
     (mrConfig "Documents/dark-mode-notify"
       "git@github.com:bouk/dark-mode-notify.git"
       "dark-mode-notify")
+    (mrConfig "Documents/nixpkgs"
+      "git@github.com:NixOS/nixpkgs.git"
+      "nixpkgs")
   ];
 
   programs.autojump.enable = true;
