@@ -20,6 +20,9 @@
   programs.git.extraConfig = {
     init.defaultBranch = "master";
     core.editor = "nvim";
+
+    # merge (the default strategy)
+    pull.rebase = false;
   };
 
   programs.ssh.enable = true;
