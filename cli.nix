@@ -43,8 +43,6 @@ in
       "git@github.com:bouk/dark-mode-notify.git" "dark-mode-notify")
     (mrConfig "Documents/nixpkgs"
       "git@github.com:NixOS/nixpkgs.git" "nixpkgs")
-    (mrConfig "Documents/BetterDiscord"
-      "git@github.com:BetterDiscord/BetterDiscord.git" "BetterDiscord")
   ];
 
   programs.autojump.enable = true;
