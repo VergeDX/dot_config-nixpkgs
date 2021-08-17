@@ -4,7 +4,7 @@
   programs.git.userName = "Vanilla";
   programs.git.userEmail = "neko@hydev.org";
 
-  home.packages = with pkgs; [ gh pinentry-curses ];
+  home.packages = with pkgs; [ gh pinentry-curses diff-so-fancy ];
 
   programs.git.includes = [
     {
