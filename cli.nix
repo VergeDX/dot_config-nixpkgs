@@ -45,7 +45,9 @@ in
     (mrConfig "Documents/nixpkgs"
       "git@github.com:NixOS/nixpkgs.git" "nixpkgs")
     (mrConfig "Documents/menubar_runcat"
-      "git@github.com:VergeDX/menubar_runcat" "menubar_runcat")
+      "git@github.com:VergeDX/menubar_runcat.git" "menubar_runcat")
+    (mrConfig "Documents/ProperTree"
+      "git@github.com:corpnewt/ProperTree.git" "ProperTree")
   ];
 
   programs.autojump.enable = true;
