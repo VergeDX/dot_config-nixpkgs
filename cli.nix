@@ -51,6 +51,8 @@ in
       "git@github.com:corpnewt/ProperTree.git" "ProperTree")
     (mrConfig "Documents/osu"
       "git@github.com:ppy/osu.git" "osu")
+    (mrConfig "Documents/config-nixpkgs"
+      "git@github.com:VergeDX/config-nixpkgs.git" "config-nixpkgs")
   ];
 
   programs.autojump.enable = true;
