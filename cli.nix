@@ -28,6 +28,7 @@ in
 
     pkgs.scrcpy
     pkgs.mr
+    pkgs.binwalk
 
     pkgs.texlive.combined.scheme-full
   ];
@@ -43,6 +44,8 @@ in
       "git@github.com:bouk/dark-mode-notify.git" "dark-mode-notify")
     (mrConfig "Documents/nixpkgs"
       "git@github.com:NixOS/nixpkgs.git" "nixpkgs")
+    (mrConfig "Documents/menubar_runcat"
+      "git@github.com:VergeDX/menubar_runcat" "menubar_runcat")
   ];
 
   programs.autojump.enable = true;
