@@ -14,10 +14,11 @@
 
     pkgs.openocd
     pkgs.stm32cubemx
-  ];
 
-  # home.file."Documents/node_modules".source =
-  #   "${pkgs.nodePackages.generator-code}/lib/node_modules";
+    # https://github.com/ppy/osu
+    pkgs.dotnet-sdk_5
+    pkgs.mono
+  ];
 
   # https://formulae.brew.sh/formula/openjdk@8
   home.sessionPath = [ "/Users/vanilla/Android/platform-tools" ];
@@ -29,6 +30,9 @@
   home.sessionVariables = {
     ELECTRON_GET_USE_PROXY = true;
     GLOBAL_AGENT_HTTPS_PROXY = "http://127.0.0.1:7890";
+
+    DOTNET_CLI_TELEMETRY_OPTOUT = 1; # or true.
+    DOTNET_SKIP_FIRST_TIME_EXPERIENCE = true;
   };
 
   home.file."Library/Application Support/code-oss-dev/User/settings.json".text = builtins.toJSON {
