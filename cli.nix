@@ -48,6 +48,8 @@ in
       "git@github.com:VergeDX/menubar_runcat.git" "menubar_runcat")
     (mrConfig "Documents/ProperTree"
       "git@github.com:corpnewt/ProperTree.git" "ProperTree")
+    (mrConfig "Documents/osu"
+      "git@github.com:ppy/osu.git" "osu")
   ];
 
   programs.autojump.enable = true;
