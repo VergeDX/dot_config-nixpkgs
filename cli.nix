@@ -13,6 +13,7 @@ in
     pkgs.p7zip
     pkgs.dmg2img
     pkgs.tmux
+    pkgs.htop
 
     pkgs.nodePackages.pxder
     pkgs.nodePackages.clipboard-cli
