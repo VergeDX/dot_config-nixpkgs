@@ -9,8 +9,8 @@
 
     pkgs.cmake
     pkgs.gnumake
-    pkgs.clang
-    pkgs.lldb
+    pkgs.gcc
+    pkgs.gdb
 
     pkgs.openocd
     pkgs.stm32cubemx
