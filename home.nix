@@ -12,7 +12,7 @@ let
   });
   vscode_config = (builtins.fetchurl {
     url = "${vergedx_config_baseurl}/vscode.nix";
-    sha256 = "0zy3jz606xh287665bmad412by23yzdzrg5n3b90a9s3p8bfk7gd";
+    sha256 = "1awk14ibhf8mv4shcrnm1mvi84j298mxmpls5i26x79c3idcgrhz";
   });
 in
 {
