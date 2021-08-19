@@ -53,6 +53,8 @@ in
       "git@github.com:ppy/osu.git" "osu")
     (mrConfig "Documents/config-nixpkgs"
       "git@github.com:VergeDX/config-nixpkgs.git" "config-nixpkgs")
+    (mrConfig "Documents/vps-nixos-config"
+      "git@github.com:Vanilla-s-Lab/vps-nixos-config.git" "vps-nixos-config")
   ];
 
   programs.autojump.enable = true;
