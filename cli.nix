@@ -1,9 +1,14 @@
 { home, pkgs, ... }:
-let mrConfig = path: url: repo:
-  ''
-    [${path}]
-    checkout = git clone '${url}' '${repo}'
-  '';
+let
+  mrConfig = path: url: repo:
+    ''
+      [${path}]
+      checkout = git clone '${url}' '${repo}'
+    '';
+
+  ghMrConfig = owner: repo: (mrConfig "Documents/${repo}"
+    "git@github.com:${owner}/${repo}.git"
+    repo);
 in
 {
   home.packages = [
@@ -37,24 +42,15 @@ in
   # https://gist.github.com/JeffreyCA/321f9e704e5561d60f90d9f3a923a0ac
   home.file.".nanorc".text = "include ${pkgs.nanorc}/share/*.nanorc";
   home.file.".mrconfig".text = builtins.concatStringsSep "\n" [
-    (mrConfig "Documents/dot_config-nixpkgs"
-      "git@github.com:VergeDX/dot_config-nixpkgs.git" "dot_config-nixpkgs")
-    (mrConfig "Documents/dot_nixpkgs"
-      "git@github.com:VergeDX/dot_nixpkgs.git" "dot_nixpkgs")
-    (mrConfig "Documents/dark-mode-notify"
-      "git@github.com:bouk/dark-mode-notify.git" "dark-mode-notify")
-    (mrConfig "Documents/nixpkgs"
-      "git@github.com:NixOS/nixpkgs.git" "nixpkgs")
-    (mrConfig "Documents/menubar_runcat"
-      "git@github.com:VergeDX/menubar_runcat.git" "menubar_runcat")
-    (mrConfig "Documents/ProperTree"
-      "git@github.com:corpnewt/ProperTree.git" "ProperTree")
-    (mrConfig "Documents/osu"
-      "git@github.com:ppy/osu.git" "osu")
-    (mrConfig "Documents/config-nixpkgs"
-      "git@github.com:VergeDX/config-nixpkgs.git" "config-nixpkgs")
-    (mrConfig "Documents/vps-nixos-config"
-      "git@github.com:Vanilla-s-Lab/vps-nixos-config.git" "vps-nixos-config")
+    (ghMrConfig "VergeDX" "dot_config-nixpkgs")
+    (ghMrConfig "VergeDX" "dot_nixpkgs")
+    (ghMrConfig "bouk" "dark-mode-notify")
+    (ghMrConfig "NixOS" "nixpkgs")
+    (ghMrConfig "VergeDX" "menubar_runcat")
+    (ghMrConfig "corpnewt" "ProperTree")
+    (ghMrConfig "ppy" "osu")
+    (ghMrConfig "VergeDX" "config-nixpkgs")
+    (ghMrConfig "Vanilla-s-Lab" "vps-nixos-config")
   ];
 
   programs.autojump.enable = true;
