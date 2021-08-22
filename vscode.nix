@@ -1,22 +1,9 @@
 { home, pkgs, ... }:
-let
-  # https://github.com/VanCoding/nix-vscode-extension-manager#installation
-  vscode-with-extensions =
-    (pkgs.vscode-with-extensions.override {
-      vscodeExtensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace
-        (builtins.fromJSON (builtins.readFile ./vscode-extensions.json));
-    }).overrideAttrs (oldAttrs: rec {
-      # https://github.com/nix-community/home-manager/blob/master/modules/programs/vscode.nix#L14
-      pname = pkgs.vscode.pname;
-    });
+let null-vscode-package = (pkgs.runCommand "" { pname = "vscode"; } "mkdir $out");
 in
 {
   programs.vscode.enable = true;
-  programs.vscode.package = vscode-with-extensions;
-  # programs.vscode.package =
-  #   if pkgs.stdenv.isDarwin # Using nix-darwin install gui programs.
-  #   then (pkgs.runCommand "" { pname = "vscode"; } "mkdir $out")
-  #   else pkgs.vscode;
+  programs.vscode.package = null-vscode-package;
 
   programs.vscode.userSettings = {
     # https://github.com/doki-theme/doki-theme-vscode/tree/master/buildSrc/assets/themes/reZero
