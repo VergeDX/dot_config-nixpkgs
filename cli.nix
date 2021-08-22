@@ -35,6 +35,7 @@ in
     pkgs.scrcpy
     pkgs.mr
     pkgs.binwalk
+    pkgs.jq
 
     pkgs.texlive.combined.scheme-full
   ];
