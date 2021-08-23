@@ -1,10 +1,9 @@
 { config, pkgs, ... }:
-
 let
   vergedx_config_baseurl = "https://github.com/VergeDX/config-nixpkgs/raw/master/config";
   neovim_config = (builtins.fetchurl {
     url = "${vergedx_config_baseurl}/neovim.nix";
-    sha256 = "08mxq3p2i5iy7wq0incby5bhgd5xy22332sxsgdpcmp6iq9rq6lh";
+    sha256 = "022pyndxnq6ydfdrd0mfmblxywkvqb77m1p538v6y55500w8959n";
   });
   shells_config = (builtins.fetchurl {
     url = "${vergedx_config_baseurl}/shells.nix";
