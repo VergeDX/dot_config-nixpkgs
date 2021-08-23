@@ -3,19 +3,33 @@ let
   thefuck_nocheck = pkgs.thefuck.overrideAttrs (
     oldAttrs: rec { pytestCheckPhase = "echo"; }
   );
+
   kitty_auto_match_theme_command = ''
     set -l val (defaults read -g AppleInterfaceStyle 2> /dev/null)
     if test $status -eq 0
-      set mode "Dark"
+      set mode "moon" # Dark
     else
-      set mode "Light"
+      set mode "dawn" # Light
     end
 
     # https://fishshell.com/docs/current/cmds/for.html
     for socket in (ls /tmp/ | grep '^mykitty');
-      kitty @ --to=unix:/tmp/"$socket" set-colors -a "~/.config/kitty/Solarized_$mode.conf";
+      kitty @ --to=unix:/tmp/"$socket" set-colors -a "${rose-pine-kitty}/rose-pine-$mode.conf";
     end
   '';
+
+  rose-pine-kitty = pkgs.stdenv.mkDerivation rec {
+    name = "rose-pine-kitty";
+    version = "1d93c5c";
+
+    src = pkgs.fetchgit {
+      url = "https://github.com/rose-pine/kitty";
+      rev = "${version}1536757ffdf4fb9fa626da0aa76ff5db8";
+      sha256 = "sha256-n3ju5fFVW0iIexg4mIxodwQ9HvLlxaEq3yul+QZmuyE=";
+    };
+
+    installPhase = "mkdir $out && cp *.conf $out/";
+  };
 in
 {
   programs.fish.enable = true;
