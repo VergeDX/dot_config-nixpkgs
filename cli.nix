@@ -19,6 +19,7 @@ in
     pkgs.dmg2img
     pkgs.tmux
     pkgs.htop
+    pkgs.ncdu
 
     pkgs.nodePackages.pxder
     pkgs.nodePackages.clipboard-cli

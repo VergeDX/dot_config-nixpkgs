@@ -44,7 +44,7 @@ in
     neovim_config
     ./extra/neovim.nix
     shells_config
-    ./extra/fish.nix
+    ./extra/shells.nix
     vscode_config
     ./dark-mode-notify.nix
   ];

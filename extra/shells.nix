@@ -28,4 +28,7 @@ in
       '';
     };
   };
+
+  programs.bash.enable = true;
+  programs.bash.bashrcExtra = "source /etc/static/bashrc";
 }
