@@ -7,11 +7,6 @@
     pkgs.nodePackages.yo
     pkgs.nodePackages.generator-code
 
-    pkgs.cmake
-    pkgs.gnumake
-    pkgs.gcc
-    pkgs.gdb
-
     pkgs.openocd
     pkgs.stm32cubemx
 
