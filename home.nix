@@ -33,7 +33,11 @@ in
   # changes in each release.
   home.stateVersion = "20.09";
 
-  home.packages = [ pkgs.nixpkgs-fmt ];
+  home.packages = with pkgs; [
+    nixpkgs-fmt
+    update-nix-fetchgit
+  ];
+
   nixpkgs.config.allowUnfree = true;
   imports = [
     ./git.nix
