@@ -31,6 +31,7 @@ in
     pkgs.screenfetch
     pkgs.neofetch
     pkgs.lolcat
+    (pkgs.callPackage ./nerdfetch.nix { })
 
     pkgs.scrcpy
     pkgs.mr
