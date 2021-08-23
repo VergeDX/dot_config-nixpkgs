@@ -35,6 +35,8 @@ in
     (pkgs.callPackage ./nerdfetch.nix { })
 
     pkgs.scrcpy
+    # pkgs.android-tools
+
     pkgs.mr
     pkgs.binwalk
     pkgs.jq
