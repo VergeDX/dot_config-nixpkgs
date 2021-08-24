@@ -48,7 +48,6 @@ in
   home.file.".nanorc".text = "include ${pkgs.nanorc}/share/*.nanorc";
   home.file.".mrconfig".text = builtins.concatStringsSep "\n" [
     (ghMrConfig "VergeDX" "dot_config-nixpkgs")
-    (ghMrConfig "VergeDX" "dot_nixpkgs")
     (ghMrConfig "bouk" "dark-mode-notify")
     (ghMrConfig "NixOS" "nixpkgs")
     (ghMrConfig "VergeDX" "menubar_runcat")
